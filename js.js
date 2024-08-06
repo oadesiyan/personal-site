@@ -1,36 +1,31 @@
-const constraints = {
-  name: {
-      presence: { allowEmpty: false }
-  },
-  email: {
-      presence: { allowEmpty: false },
-      email: true
-  },
-  message: {
-      presence: { allowEmpty: false }
+async function fetchCurrentlyPlaying() {
+    const apiKey = '10af75025324cf927e94b918377f7c3c';
+    const username = 'thepelumiprint';
+    const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const songDiv = document.getElementById('current-song');
+
+      if (data.recenttracks.track && data.recenttracks.track.length > 0) {
+        const track = data.recenttracks.track[0];
+        if (track['@attr'] && track['@attr'].nowplaying) {
+          const songName = track.name;
+          const artistName = track.artist['#text'];
+          songDiv.textContent = `Currently playing: ${songName} by ${artistName}`;
+        } else {
+          songDiv.textContent = "I'm not listening music right now.";
+        }
+      } else {
+        songDiv.textContent = "I'm not listening music right now.";
+      }
+    } catch (error) {
+      console.error('Error fetching data from Last.fm:', error);
+      const songDiv = document.getElementById('current-song');
+      songDiv.textContent = 'An error occurred while fetching the currently playing song.';
+    }
   }
-};
 
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', function (event) {
-
-  const formValues = {
-      name: form.elements.name.value,
-      email: form.elements.email.value,
-      message: form.elements.message.value
-  };
-
-
-  const errors = validate(formValues, constraints);
-  if (errors) {
-      event.preventDefault();
-      const errorMessage = Object
-          .values(errors)
-          .map(function (fieldValues) {
-              return fieldValues.join(', ')
-          })
-          .join("\n");
-
-      alert(errorMessage);
-  }
-}, false);
+  fetchCurrentlyPlaying();
