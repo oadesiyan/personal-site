@@ -1,0 +1,142 @@
+
+.logo h1 {
+    margin-bottom: 0px;
+}
+
+.nav-container h1, h3 {
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav h3 {
+    margin-top: 0px;
+}
+
+.nav a:link {
+    color: black;
+}
+.nav a:visited {
+    color: black;
+}
+
+.nav a:hover {
+    color: #88B366;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.contact-form {
+    font: manjari-thin;
+}
+
+/*fonts section*/
+.manjari-thin {
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+
+/*experience page*/
+.experience-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 1;
+    gap: 15px;
+}
+
+.experience-container div {
+    flex: 1;
+}
+
+.title {
+    font: manjari-thin;
+    text-align: center;
+}
+
+.job-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-title {
+    justify-content: left;
+}
+.dates {
+    justify-content: right;
+}
+
+.job p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.job a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+.job-info:hover {
+    background-color: #88B366;
+}
+
+.job li:hover {
+    background-color: #88B366;
+}
+/*style="background-color: #fff4f2; fadadd"*/
+
+.vertical-line { 
+    width: 1px; 
+    background-color: black; 
+    border-left: 2px;
+    border-right: 2px;
+ } 
+
+.special-text {
+    color: #88B366;
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#bio-img {
+    justify-content: left;
+    width: 45%;
+    height: 45%;
+}
+#bio-text {
+    justify-content: right;
+    margin: 5%;
+    margin-top: 0%;
+}
+
+.contact-container {
+    text-align: center;
+    margin: 0px;
+}
+
+.contact-container a:visited {
+    color:black;
+}
+
+.contact-container a:hover {
+    color:#88B366;
+}
+
+h1:hover span {
+    color: #88B366;
+}
