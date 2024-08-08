@@ -1,6 +1,6 @@
 async function fetchCurrentlyPlaying() {
-    const apiKey = '10af75025324cf927e94b918377f7c3c';
-    const username = 'thepelumiprint';
+    const apiKey = '<apiKey>';
+    const username = '<user>';
     const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
 
     try {
